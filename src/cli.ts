@@ -4,6 +4,7 @@ import { parseArgs } from "node:util";
 import Parallel from "parallel-web";
 import { buildTaskRequest, runBrief } from "./brief.js";
 import { renderMarkdown } from "./render.js";
+import { explainError } from "./errors.js";
 
 const USAGE = `Usage: npm run brief -- "<company>" [--website example.com] [--processor core] [--dry-run]
 
@@ -42,9 +43,15 @@ if (!process.env.PARALLEL_API_KEY) {
 const client = new Parallel({ apiKey: process.env.PARALLEL_API_KEY });
 console.error(`Researching ${company} with the ${req.processor} processor...`);
 
-const result = await runBrief(client, req, (attempt) => {
-  console.error(`  still researching (${attempt * 25}s)`);
-});
+let result;
+try {
+  result = await runBrief(client, req, (attempt) => {
+    console.error(`  still researching (${attempt * 25}s)`);
+  });
+} catch (err) {
+  console.error(`Brief failed: ${explainError(err)}`);
+  process.exit(1);
+}
 
 const slug = company.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 await mkdir("briefs", { recursive: true });

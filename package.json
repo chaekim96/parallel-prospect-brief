@@ -4,12 +4,13 @@
   "description": "Cited one-page sales briefs on any prospect, built on Parallel's Task API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --import tsx --test test/*.test.ts",
     "brief": "tsx src/cli.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "sample": "tsx test/sample.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chae Kim",
   "license": "ISC",
   "type": "module",
   "dependencies": {
