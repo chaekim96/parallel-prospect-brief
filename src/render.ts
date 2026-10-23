@@ -44,7 +44,7 @@ export function renderMarkdown(company: string, r: BriefResult): string {
   const lines = [
     `# Prospect Brief: ${company}`,
     "",
-    `| | |`,
+    `| | ${company.replace(/\|/g, "\\|")} |`,
     `|---|---|`,
     row("company_summary", b.company_summary),
     row("products", b.products),

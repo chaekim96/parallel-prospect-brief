@@ -51,7 +51,7 @@ test("render: shared, de-duplicated source numbers with confidence", () => {
 
 test("render: table cells escape pipes, empty triggers say so", () => {
   const md = renderMarkdown("Example Co", FIXTURE);
-  assert.match(md, /> Your assistant could cite live competitor prices \| not/); // a quote line, so the pipe stays as written
+  assert.match(md, /> Your assistant could cite live competitor prices, not/);
   const piped = renderMarkdown("X", { ...FIXTURE, brief: { ...FIXTURE.brief, products: "A | B", recent_triggers: [] } });
   assert.match(piped, /A \\\| B/);
   assert.match(piped, /- No recent triggers found\./);

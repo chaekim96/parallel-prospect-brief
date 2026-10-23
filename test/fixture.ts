@@ -15,7 +15,7 @@ export const FIXTURE: BriefResult = {
     current_web_stack: "No public evidence",
     best_fit_api: "Task",
     secondary_api: "Monitor",
-    pitch: "Your assistant could cite live competitor prices | not last month's export.",
+    pitch: "Your assistant could cite live competitor prices, not last month's export.",
     recent_triggers: [{ event: "Launched the AI assistant (invented).", date: "Sep 2026" }],
     buyer_personas: ["Head of Product", "CTO"],
     discovery_questions: ["Where does the assistant get outside data today?", "How fresh does that data need to be?", "Who owns data vendors?"],

@@ -2,7 +2,7 @@
 
 # Prospect Brief: Example Co
 
-| | |
+| | Example Co |
 |---|---|
 | **What they do** | Example Co makes a fictional analytics tool for small online stores. <sub>[1] · high confidence</sub> |
 | **Products** | A dashboard, a weekly email report, and an AI assistant that answers questions about store data. <sub>[2, 1] · medium confidence</sub> |
@@ -13,7 +13,7 @@
 
 ## First-call pitch
 
-> Your assistant could cite live competitor prices | not last month's export.
+> Your assistant could cite live competitor prices, not last month's export.
 
 ## Why now
 
